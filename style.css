@@ -78,17 +78,37 @@ main img.pequena {
 }
 
 main div#q1{
+    
     margin: 10px 5px 10px 50px;
     background-image: url(imagens/sergio\ bh\ racing225x225.jpeg);
+    background-position: top center;
 }
 main div#q2{
     background-image: url(imagens/montanafogo.jpeg);
     margin: 10px 5px 10px 5px;
+    background-position: top center;
 }
 main div#q3{
+    background-image: url(imagens/serigo\ bh\ racing2.jpeg);
     margin: 10px 30px 10px 5px;
+    background-position: top center;
+}
+
+main > div {
+    color: white;
+    background-image: linear-gradient(to left, gray, transparent);
+    
+    
+    text-decoration: none;
+    font-weight: bold;
+    transition-duration: 0.5s;
+}
+main > div:hover {
+    background-color: gray;
+    color: blue;
 }
 div {
+    background-image: linear-gradient(to bottom, rgb(194, 193, 193), rgb(71, 71, 71));
     display: inline-block;
     color: aqua;
     height: 500px;
