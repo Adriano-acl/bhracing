@@ -11,6 +11,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ====== CABEÇALHO ====== */
 header {
   background-image: linear-gradient(to bottom, black, rgb(71, 71, 71));
   color: white;
@@ -33,6 +34,7 @@ header p {
   margin: 10px 0;
 }
 
+/* ====== MENU ====== */
 nav {
   background-color: rgba(14, 14, 14, 0.833);
   text-align: center;
@@ -54,6 +56,7 @@ nav a:hover {
   color: rgb(199, 199, 199);
 }
 
+/* ====== CONTEÚDO ====== */
 main {
   padding: 10px;
   text-align: center;
@@ -65,42 +68,85 @@ main img.pequena {
   border-radius: 8px;
 }
 
-/* Imagem principal abaixo do menu */
+/* ====== IMAGEM PRINCIPAL ====== */
 #imagem-principal {
   width: 100%;
   height: auto;
-  max-height: 500px; /* evita que fique gigante em telas grandes */
-  object-fit: contain; /* garante que a imagem inteira apareça */
+  max-height: 500px;
+  object-fit: contain;
   display: block;
   margin: 0 auto;
-  background-color: black; /* adiciona fundo neutro caso sobrem bordas */
+  background-color: black;
 }
 
+/* ====== QUADROS DE SEÇÕES ====== */
+.quadros-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 60px auto;
+}
 
 .quadro {
-  width: 100%;
-  height: 300px;
-  margin: 10px 0;
+  position: relative;
+  width: 320px;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
   background-size: cover;
   background-position: center;
-  border: 1px solid black;
-  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
-/* Quadros específicos */
+.quadro:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* ====== IMAGENS ====== */
 #q1 {
-  background-image: url(imagens/sergio\ bh\ racing225x225.jpeg);
+  background-image: url('imagens/sergio bh racing225x225.jpeg');
 }
 
 #q2 {
-  background-image: url(imagens/montanafogo.jpeg);
+  background-image: url('imagens/montanafogo.jpeg');
 }
 
 #q3 {
-  background-image: url(imagens/serigo\ bh\ racing2.jpeg);
+  background-image: url('imagens/serigo bh racing2.jpeg');
 }
 
-/* Rodapé */
+/* ====== DESCRIÇÃO SOBREPOSTA ====== */
+.descricao {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.descricao h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+.descricao p {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  line-height: 1.2;
+}
+
+/* ====== RODAPÉ ====== */
 footer {
   text-align: center;
   padding: 10px;
@@ -109,23 +155,23 @@ footer {
   color: white;
 }
 
-/* Efeito de parallax no rodapé */
+/* ====== PARALLAX NO RODAPÉ ====== */
 .rodape-parallax {
   position: relative;
   overflow: hidden;
-  height: 250px; /* altura menor e proporcional ao restante do site */
+  height: 250px;
   background-color: black;
 }
 
 .parallax-img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* mostra a imagem inteira sem cortar */
-  object-position: center; /* centraliza a imagem no espaço */
+  object-fit: contain;
+  object-position: center;
   transition: transform 0.3s ease-out;
 }
 
-/* Telas maiores */
+/* ====== TELAS MAIORES ====== */
 @media (min-width: 768px) {
   nav a {
     display: inline-block;
@@ -140,17 +186,12 @@ footer {
     margin: auto;
   }
 
-  .quadro {
-    width: 300px;
-    margin: 10px;
-    height: 500px;
-  }
-
   h1 {
     font-size: 2em;
   }
 
-  header p#t0, header p#t2 {
+  header p#t0,
+  header p#t2 {
     display: inline-block;
     width: 48%;
     font-size: 1em;
