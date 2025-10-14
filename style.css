@@ -113,16 +113,16 @@ footer {
 .rodape-parallax {
   position: relative;
   overflow: hidden;
-  height: 300px;
+  height: 250px; /* altura menor e proporcional ao restante do site */
   background-color: black;
-  text-align: center;
 }
 
 .parallax-img {
   width: 100%;
-  height: auto;
-  transition: transform 0.2s ease-out;
-  will-change: transform;
+  height: 100%;
+  object-fit: contain; /* mostra a imagem inteira sem cortar */
+  object-position: center; /* centraliza a imagem no espaço */
+  transition: transform 0.3s ease-out;
 }
 
 /* Telas maiores */
