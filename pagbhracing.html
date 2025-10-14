@@ -1,35 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Historia BH Racing</title>
-    <link rel="shortcut icon" href="imagens/favicon bh racing lo completo/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BH Racing</title>
+  <link rel="shortcut icon" href="imagens/favicon bh racing lo completo/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <picture>
-            <img src="imagens/bhracingtransparente2.png" alt="imagem bh racing fundo transparente">
-        </picture>
-            <h1>TURBO E ASPRO</h1>
-            <p class="text" id="t0">(31) 987028931</p>
-            <p class="text" id="t2">Rua Bartolomeu Bueno de Gusmão 119, Lagoa Santa/MG</p>
-            
-    </header>
+  <header>
+    <picture>
+      <img src="imagens/bhracingtransparente2.png" alt="imagem bh racing fundo transparente">
+    </picture>
+    <h1>TURBO E ASPRO</h1>
+    <p class="text" id="t0">(31) 987028931</p>
+    <p class="text" id="t2">Rua Bartolomeu Bueno de Gusmão 119, Lagoa Santa/MG</p>
+  </header>
 
-    <nav>
-        <a href="index.html">HOME</a>
-        <a href="pagbhracing.html">BH RACING</a>
-        
-        <a href="foto_bhracing.html">CARROS</a>
-        <a href="#">VÍDEOS</a>
-    </nav>
+  <nav>
+    <a href="index.html">HOME</a>
+    <a href="pagbhracing.html">BH RACING</a>
+    <a href="foto_bhracing.html">CARROS</a>
+    <a href="#">VÍDEOS</a>
+  </nav>
 
-    <main>
-        <picture>
-            <img src="imagens/montana1040x350alterado.png" class="pequena" alt="Bugdroid">
-        </picture>
+  <main>
+    <!-- Slideshow de imagens -->
+    <picture>
+      <img id="imagem-principal" src="imagens/montana1000x350.png" class="pequena" alt="Imagem Principal BH Racing">
+    </picture>
+
+
         <h1>Historia BH Racing</h1>
         <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia vitae cumque veniam, illo ab natus ducimus quod consequatur doloremque corporis ea accusamus odit cupiditate facilis, assumenda harum aperiam voluptatum fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus modi atque earum est accusamus nostrum, quam officiis fugit natus necessitatibus. Officia impedit mollitia accusamus consectetur minus fugit unde modi eos.</P>
         <picture>
@@ -44,12 +45,40 @@
             <img src="imagens/montanafogo.jpeg" alt="">
         </picture>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores incidunt maiores fugiat distinctio perferendis, est facere illum a at ab reiciendis debitis impedit. Quas recusandae quia non veniam voluptatibus atque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius doloribus vero tenetur placeat enim vitae iusto nostrum beatae consequatur! Accusantium quos ipsum, incidunt unde nisi nam facere cumque ab eius.</p>
+  <!-- Imagem com efeito parallax no rodapé -->
+  <section class="rodape-parallax">
+    <img src="imagens/chatgbtbhracing.png" alt="Imagem Rodapé" class="parallax-img">
+  </section>
 
-    </main>
+  <footer>
+    <p>Site criado por ACLtecnol</p>
+  </footer>
 
-    <footer>
-        <p>Site criado por <a href="#"></a>ACLtecnol</p>
-    </footer>
-    
+  <!-- JavaScript -->
+  <script>
+    // SLIDESHOW
+    const imagens = [
+      'imagens/montana1000x350.png',
+      'imagens/imagem bhracing/maverickgustavo1000x350.jpg',
+      'imagens/imagem bhracing/opalavermelho1000x350.jpg',
+      'imagens/imagem bhracing/mostrana1000x350.jpg',
+      'imagens/imagem bhracing/milico1000x350.jpg',
+    ];
+    let indexAtual = 0;
+    const imgPrincipal = document.getElementById('imagem-principal');
+
+    setInterval(() => {
+      indexAtual = (indexAtual + 1) % imagens.length;
+      imgPrincipal.src = imagens[indexAtual];
+    }, 3000); // Troca a cada 3 segundos
+
+    // PARALLAX ZOOM RODAPÉ
+    window.addEventListener('scroll', function () {
+      const imgParallax = document.querySelector('.parallax-img');
+      const scrollY = window.scrollY;
+      const scale = 1 + Math.min(scrollY / 1000, 0.5); // Máx 1.5x
+      imgParallax.style.transform = `scale(${scale})`;
+    });
+  </script>
 </body>
 </html>

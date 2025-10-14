@@ -62,7 +62,20 @@ main {
 main img.pequena {
   max-width: 100%;
   height: auto;
+  border-radius: 8px;
 }
+
+/* Imagem principal abaixo do menu */
+#imagem-principal {
+  width: 100%;
+  height: auto;
+  max-height: 500px; /* evita que fique gigante em telas grandes */
+  object-fit: contain; /* garante que a imagem inteira apareça */
+  display: block;
+  margin: 0 auto;
+  background-color: black; /* adiciona fundo neutro caso sobrem bordas */
+}
+
 
 .quadro {
   width: 100%;
@@ -74,7 +87,7 @@ main img.pequena {
   border-radius: 5px;
 }
 
-/* Específicos para os quadros */
+/* Quadros específicos */
 #q1 {
   background-image: url(imagens/sergio\ bh\ racing225x225.jpeg);
 }
@@ -87,18 +100,32 @@ main img.pequena {
   background-image: url(imagens/serigo\ bh\ racing2.jpeg);
 }
 
+/* Rodapé */
 footer {
   text-align: center;
   padding: 10px;
   font-size: 0.9em;
   background-image: linear-gradient(to bottom, black, rgb(71, 71, 71));
   color: white;
-  text-align: center;
-  padding: 10px;
-  
 }
 
-/* ✨ Tela maior: notebooks e desktops */
+/* Efeito de parallax no rodapé */
+.rodape-parallax {
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+  background-color: black;
+  text-align: center;
+}
+
+.parallax-img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+/* Telas maiores */
 @media (min-width: 768px) {
   nav a {
     display: inline-block;
@@ -141,4 +168,3 @@ footer {
     text-align: center;
   }
 }
-
