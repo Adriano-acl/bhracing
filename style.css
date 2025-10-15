@@ -1,211 +1,304 @@
 @charset "UTF-8";
 
+/* ===== RESET ===== */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* ===== BODY (Fundo e Cor da Fonte Principal) ===== */
 body {
-  background-color: rgb(200, 200, 200);
-  font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('imagens/milico-fundo.png'); 
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Definição da cor da fonte para Branco no body */
+    color: #fff; 
 }
 
-/* ====== CABEÇALHO ====== */
+/* ======================================= */
+/* ===== NOVO FILTRO DE FUNDO (COBRE TUDO) ===== */
+/* ======================================= */
+#filtro-fundo {
+    /* Faz com que a div cubra 100% da largura e altura da viewport */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Define o fundo preto com 50% de transparência (aumento da transparência solicitado) */
+    background-color: rgba(0, 0, 0, 0.50); 
+    /* Coloca o filtro atrás de todo o conteúdo (header, nav, main, etc.) */
+    z-index: -1; 
+}
+/* ======================================= */
+
+
+/* ===== CABEÇALHO ===== */
 header {
-  background-image: linear-gradient(to bottom, black, rgb(71, 71, 71));
-  color: white;
-  text-align: center;
-  padding: 10px;
+    background-image: linear-gradient(to bottom, black, rgb(71, 71, 71));
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative; 
 }
 
 header img {
-  max-width: 100%;
-  height: auto;
+    max-width: 100%;
+    height: auto;
 }
 
 h1 {
-  font-size: 1.2em;
-  margin: 10px 0px 15px 0px;
+    font-size: 1.5em;
+    margin: 10px 0;
 }
 
 header p {
-  font-size: 0.9em;
-  margin: 10px 0;
+    font-size: 0.9em;
+    margin: 5px 0;
 }
 
-/* ====== MENU ====== */
-nav {
-  background-color: rgba(14, 14, 14, 0.833);
-  text-align: center;
-  padding: 10px;
+/* ======================================= */
+/* ===== MENU SANDUÍCHE (FINAL) ===== */
+/* ======================================= */
+.navbar {
+    background-color: rgba(14, 14, 14, 0.85);
+    padding: 10px;
+    position: relative;
+    text-align: left;
+    min-height: 48px; 
 }
 
-nav a {
-  display: block;
-  color: white;
-  padding: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  background-image: linear-gradient(to left, rgba(255, 0, 0, 0.408), transparent);
-  margin-bottom: 5px;
+/* BOTÃO SANDUÍCHE */
+.menu-toggle {
+    display: block; 
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 11; 
 }
 
-nav a:hover {
-  background-color: red;
-  color: rgb(199, 199, 199);
+/* LINKS DO MENU */
+.menu-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none; 
+    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: rgba(14, 14, 14, 0.98); 
+    z-index: 10;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* ====== CONTEÚDO ====== */
+.menu-links.ativo {
+    display: flex; 
+}
+
+.menu-links li {
+    width: 100%; 
+}
+
+.menu-links a {
+    display: block;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-weight: bold;
+    background-image: linear-gradient(to left, rgba(255, 0, 0, 0.408), transparent);
+}
+
+.menu-links a:hover {
+    background-color: red;
+    color: rgb(230, 230, 230);
+}
+/* ======================================= */
+
+/* ===== CONTEÚDO E SLIDESHOW (PADRÃO) ===== */
 main {
-  padding: 10px;
-  text-align: center;
+    /* Padding e centralização retornam ao main, que não tem mais fundo escuro */
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-main img.pequena {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
+.slideshow-container {
+    max-width: 1000px; 
+    margin: 20px auto;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-/* ====== IMAGEM PRINCIPAL ====== */
 #imagem-principal {
-  width: 100%;
-  height: auto;
-  max-height: 500px;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  background-color: black;
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
 }
 
-/* ====== QUADROS DE SEÇÕES ====== */
+/* ===== QUADROS DE SEÇÕES (PADRÃO) ===== */
 .quadros-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin: 60px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 60px auto;
 }
 
 .quadro {
-  position: relative;
-  width: 320px;
-  height: 220px;
-  border-radius: 12px;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
+    position: relative;
+    width: 320px;
+    height: 220px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
 }
 
 .quadro:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* ====== IMAGENS ====== */
+/* ====== IMAGENS DOS QUADROS (PADRÃO) ====== */
 #q1 {
-  background-image: url('imagens/sergio bh racing225x225.jpeg');
+    background-image: url('imagens/sergio bh racing225x225.jpeg');
 }
 
 #q2 {
-  background-image: url('imagens/montanafogo.jpeg');
+    background-image: url('imagens/montanafogo.jpeg');
 }
 
 #q3 {
-  background-image: url('imagens/serigo bh racing2.jpeg');
+    background-image: url('imagens/serigo bh racing2.jpeg');
 }
 
-/* ====== DESCRIÇÃO SOBREPOSTA ====== */
+/* ====== DESCRIÇÃO SOBREPOSTA (PADRÃO) ====== */
 .descricao {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  color: #000;
-  padding: 10px 15px;
-  box-sizing: border-box;
-  text-align: left;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Fundo dos quadros deve ser claro para o texto preto */
+    background: rgba(255, 255, 255, 0.9);
+    color: #000; /* Texto Preto no Quadro Branco */
+    padding: 10px 15px;
+    box-sizing: border-box;
+    text-align: left;
 }
 
 .descricao h3 {
-  font-size: 1.1rem;
-  margin: 0;
-  font-weight: bold;
+    font-size: 1.1rem;
+    margin: 0;
+    font-weight: bold;
 }
 
 .descricao p {
-  font-size: 0.9rem;
-  margin-top: 5px;
-  line-height: 1.2;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    line-height: 1.2;
 }
 
-/* ====== RODAPÉ ====== */
+/* ====== RODAPÉ E PARALLAX (FINAL) ===== */
 footer {
-  text-align: center;
-  padding: 10px;
-  font-size: 0.9em;
-  background-image: linear-gradient(to bottom, black, rgb(71, 71, 71));
-  color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+    background-image: linear-gradient(to bottom, black, rgb(71, 71, 71));
+    color: white;
 }
 
-/* ====== PARALLAX NO RODAPÉ ====== */
 .rodape-parallax {
-  position: relative;
-  overflow: hidden;
-  height: 250px;
-  background-color: black;
+    position: relative;
+    overflow: hidden;
+    height: 250px; 
+    background-color: black;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
 }
 
 .parallax-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  transition: transform 0.3s ease-out;
+    width: auto; 
+    height: 100%; 
+    max-width: none; 
+    display: block;
+    object-position: center;
+    transition: transform 0.3s ease-out;
 }
 
-/* ====== TELAS MAIORES ====== */
-@media (min-width: 768px) {
-  nav a {
-    display: inline-block;
-    margin: 0 10px;
-  }
+/* ===== MEDIA QUERY PARA AJUSTE DO CABEÇALHO (PADRÃO) ===== */
+@media (min-width: 769px) {
+    header p#t0,
+    header p#t2 {
+        display: inline-block;
+        width: 48%;
+        font-size: 1em;
+    }
 
-  main {
+    header p#t0 {
+        text-align: left;
+    }
+
+    header p#t2 {
+        text-align: right;
+    }
+}
+/* ======================================= */
+/* ===== GALERIA DE FOTOS (FOTO_BHRACING.HTML) ===== */
+/* ======================================= */
+
+.galeria-fotos {
+    /* Define o layout de grade flexível para a galeria */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    max-width: 1040px;
-    margin: auto;
-  }
+    gap: 15px; /* Espaço entre as fotos */
+    padding: 20px 0;
+}
 
-  h1 {
-    font-size: 2em;
-  }
+.galeria-fotos img {
+    /* Define o tamanho das fotos. 
+       A largura 225px é usada nas imagens originais, então ajustaremos o CSS. */
+    width: 225px; 
+    height: 225px; /* Mantém a proporção quadrada */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
 
-  header p#t0,
-  header p#t2 {
-    display: inline-block;
-    width: 48%;
-    font-size: 1em;
-  }
+.galeria-fotos img:hover {
+    /* Efeito de destaque ao passar o mouse */
+    transform: scale(1.05);
+}
 
-  header p#t0 {
-    text-align: left;
-  }
-
-  header p#t2 {
-    text-align: right;
-  }
-
-  header p {
-    text-align: center;
-  }
+/* Ajuste para telas menores (responsividade) */
+@media (max-width: 500px) {
+    .galeria-fotos img {
+        /* Torna as imagens maiores em telas muito pequenas (ex: celulares) */
+        width: 100%; 
+        height: auto;
+        max-width: 300px;
+    }
 }

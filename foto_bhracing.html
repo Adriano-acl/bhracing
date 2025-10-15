@@ -1,91 +1,85 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BH Racing</title>
-  <link rel="shortcut icon" href="imagens/favicon bh racing lo completo/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BH Racing - Carros</title>
+    <link rel="shortcut icon" href="imagens/favicon bh racing lo completo/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <picture>
-      <img src="imagens/bhracingtransparente2.png" alt="imagem bh racing fundo transparente">
-    </picture>
-    <h1>TURBO E ASPRO</h1>
-    <p class="text" id="t0">(31) 987028931</p>
-    <p class="text" id="t2">Rua Bartolomeu Bueno de Gusmão 119, Lagoa Santa/MG</p>
-  </header>
+    
+    <div id="filtro-fundo"></div>
 
-  <nav>
-    <a href="index.html">HOME</a>
-    <a href="pagbhracing.html">BH RACING</a>
-    <a href="foto_bhracing.html">CARROS</a>
-    <a href="#">VÍDEOS</a>
-  </nav>
-
-  <main>
-            <!-- Slideshow de imagens -->
+    <header>
         <picture>
-      <img id="imagem-principal" src="imagens/montana1000x350.png" class="pequena" alt="Imagem Principal BH Racing">
+            <img src="imagens/bhracingtransparente2.png" alt="imagem bh racing fundo transparente">
         </picture>
+        <h1>TURBO E ASPRO</h1>
+        <p class="text" id="t0">(31) 987028931</p>
+        <p class="text" id="t2">Rua Bartolomeu Bueno de Gusmão 119, Lagoa Santa/MG</p>
+    </header>
 
-            
-            <h1>FOTOS DOS CARROS E MOMENTOS</h1>
+    <nav class="navbar">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <ul class="menu-links" id="menu-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="pagbhracing.html">BH RACING</a></li>
+            <li><a href="foto_bhracing.html">CARROS</a></li>
+            <li><a href="#">VÍDEOS</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h1>FOTOS DOS CARROS E MOMENTOS</h1>
+
+        <div class="galeria-fotos">
+            <img src="imagens/imagem bhracing/maverik_motor_225.jpg" alt="Maverick Motor">
+            <img src="imagens/imagem bhracing/maverik1_225.jpg" alt="Maverick na Pista">
+            <img src="imagens/imagem bhracing/chevette1_225.jpg" alt="Chevette">
+            <img src="imagens/imagem bhracing/montana_alinhando_225.jpg" alt="Montana Alinhando">
+            <img src="imagens/imagem bhracing/milico1_225.jpg" alt="Carro Milico">
+            <img src="imagens/imagem bhracing/beringela_225.jpg" alt="Carro Beringela">
+            <img src="imagens/imagem bhracing/audi_225.jpg" alt="Audi de Corrida">
+            <img src="imagens/imagem bhracing/chevette1_225.jpg" alt="Chevette 2">
+            <img src="imagens/imagem bhracing/thiago_visita_225.jpg" alt="Visita Thiago">
+            <img src="imagens/imagem bhracing/civic_225.jpg" alt="Honda Civic">
+            <img src="imagens/imagem bhracing/montana_frente_225.jpg" alt="Montana Frente">
+            <img src="imagens/imagem bhracing/milico_sergio_225.jpg" alt="Milico e Sergio">
+            <img src="imagens/imagem bhracing/montanab_225.jpg" alt="Montana B">
+            <img src="imagens/imagem bhracing/cristian_225.jpg" alt="Cristian">
+            <img src="imagens/imagem bhracing/milico_grade_225.jpg" alt="Milico Grade">
+        </div>
+    </main>
+
+    <section class="rodape-parallax">
+        <img src="imagens/chatgbtbhracing.png" alt="Imagem Rodapé" class="parallax-img">
+    </section>
+
+    <footer>
+        <p>Site criado por ACLtecnol</p>
+    </footer>
+
+    <script>
+        // PARALLAX ZOOM RODAPÉ (MANTIDO)
+        window.addEventListener('scroll', function () {
+            const imgParallax = document.querySelector('.parallax-img');
+            const scrollY = window.scrollY;
+            const scale = 1 + Math.min(scrollY / 1000, 0.5);
+            imgParallax.style.transform = `scale(${scale})`;
+        });
         
-        <picture>
-            <img src="imagens/imagem bhracing/maverik_motor_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/maverik1_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/chevette1_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/montana_alinhando_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/milico1_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/beringela_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/audi_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/chevette1_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/thiago_visita_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/civic_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/montana_frente_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/milico_sergio_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/montanab_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/cristian_225.jpg" alt="">
-            <img src="imagens/imagem bhracing/milico_grade_225.jpg" alt="">
-        </picture>
-  </main>
-
-  <!-- Imagem com efeito parallax no rodapé -->
-  <section class="rodape-parallax">
-    <img src="imagens/chatgbtbhracing.png" alt="Imagem Rodapé" class="parallax-img">
-  </section>
-
-  <footer>
-    <p>Site criado por ACLtecnol</p>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // SLIDESHOW
-    const imagens = [
-      'imagens/montana1000x350.png',
-      'imagens/imagem bhracing/maverickgustavo1000x350.jpg',
-      'imagens/imagem bhracing/opalavermelho1000x350.jpg',
-      'imagens/imagem bhracing/mostrana1000x350.jpg',
-      'imagens/imagem bhracing/milico1000x350.jpg',
-    ];
-    let indexAtual = 0;
-    const imgPrincipal = document.getElementById('imagem-principal');
-
-    setInterval(() => {
-      indexAtual = (indexAtual + 1) % imagens.length;
-      imgPrincipal.src = imagens[indexAtual];
-    }, 3000); // Troca a cada 3 segundos
-
-    // PARALLAX ZOOM RODAPÉ
-    window.addEventListener('scroll', function () {
-      const imgParallax = document.querySelector('.parallax-img');
-      const scrollY = window.scrollY;
-      const scale = 1 + Math.min(scrollY / 1000, 0.5); // Máx 1.5x
-      imgParallax.style.transform = `scale(${scale})`;
-    });
-  </script>
+        // MENU SANDUÍCHE (MANTIDO)
+        const toggleBtn = document.getElementById('menu-toggle');
+        const menuLinks = document.getElementById('menu-links');
+        
+        if (toggleBtn && menuLinks) {
+            toggleBtn.addEventListener('click', () => {
+                menuLinks.classList.toggle('ativo');
+            });
+        }
+        
+        // O SCRIPT DO SLIDESHOW FOI REMOVIDO
+    </script>
 </body>
 </html>

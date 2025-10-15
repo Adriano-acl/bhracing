@@ -1,95 +1,106 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BH Racing</title>
-  <link rel="shortcut icon" href="imagens/favicon bh racing lo completo/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BH Racing</title>
+    <link rel="shortcut icon" href="imagens/favicon bh racing lo completo/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <picture>
-      <img src="imagens/bhracingtransparente2.png" alt="imagem bh racing fundo transparente">
-    </picture>
-    <h1>TURBO E ASPRO</h1>
-    <p class="text" id="t0">(31) 987028931</p>
-    <p class="text" id="t2">Rua Bartolomeu Bueno de Gusmão 119, Lagoa Santa/MG</p>
-  </header>
+    
+    <div id="filtro-fundo"></div>
 
-  <nav>
-    <a href="index.html">HOME</a>
-    <a href="pagbhracing.html">BH RACING</a>
-    <a href="foto_bhracing.html">CARROS</a>
-    <a href="#">VÍDEOS</a>
-  </nav>
+    <header>
+        <picture>
+            <img src="imagens/bhracingtransparente2.png" alt="imagem bh racing fundo transparente">
+        </picture>
+        <h1>TURBO E ASPRO</h1>
+        <p class="text" id="t0">(31) 987028931</p>
+        <p class="text" id="t2">Rua Bartolomeu Bueno de Gusmão 119, Lagoa Santa/MG</p>
+    </header>
 
-  <main>
-    <!-- Slideshow de imagens -->
-    <picture>
-      <img id="imagem-principal" src="imagens/montana1000x350.png" class="pequena" alt="Imagem Principal BH Racing">
-    </picture>
+    <nav class="navbar">
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+        <ul class="menu-links" id="menu-links">
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="pagbhracing.html">BH RACING</a></li>
+            <li><a href="foto_bhracing.html">CARROS</a></li>
+            <li><a href="#">VÍDEOS</a></li>
+        </ul>
+    </nav>
 
-    <!-- Quadros com links -->
-<section class="quadros-container">
-  <a href="pagbhracing.html" class="quadro" id="q1">
-    <div class="descricao">
-      <h3>História da BH Racing</h3>
-      <p>A trajetória que começou nos anos 2000 e transformou-se em referência nas pistas.</p>
-    </div>
-  </a>
+    <main> 
+        <div class="slideshow-container">
+            <img id="imagem-principal" src="imagens/montana1000x350.png" alt="Imagem Principal BH Racing">
+        </div>
 
-  <a href="foto_bhracing.html" class="quadro" id="q2">
-    <div class="descricao">
-      <h3>Galeria de Projetos</h3>
-      <p>Fotos exclusivas de carros e projetos desenvolvidos pela BH Racing.</p>
-    </div>
-  </a>
+        <section class="quadros-container">
+            <a href="pagbhracing.html" class="quadro" id="q1">
+                <div class="descricao">
+                    <h3>História da BH Racing</h3>
+                    <p>A trajetória que começou nos anos 2000 e transformou-se em referência nas pistas.</p>
+                </div>
+            </a>
 
-  <a href="#" class="quadro" id="q3">
-    <div class="descricao">
-      <h3>Novidades e Eventos</h3>
-      <p>Acompanhe as próximas etapas e tudo o que acontece no mundo BH Racing.</p>
-    </div>
-  </a>
-</section>
+            <a href="foto_bhracing.html" class="quadro" id="q2">
+                <div class="descricao">
+                    <h3>Galeria de Projetos</h3>
+                    <p>Fotos exclusivas de carros e projetos desenvolvidos pela BH Racing.</p>
+                </div>
+            </a>
 
-  </main>
+            <a href="#" class="quadro" id="q3">
+                <div class="descricao">
+                    <h3>Novidades e Eventos</h3>
+                    <p>Acompanhe as próximas etapas e tudo o que acontece no mundo BH Racing.</p>
+                </div>
+            </a>
+        </section>
+    </main>
 
-  <!-- Imagem com efeito parallax no rodapé -->
-  <section class="rodape-parallax">
-    <img src="imagens/chatgbtbhracing.png" alt="Imagem Rodapé" class="parallax-img">
-  </section>
+    <section class="rodape-parallax">
+        <img src="imagens/chatgbtbhracing.png" alt="Imagem Rodapé" class="parallax-img">
+    </section>
 
-  <footer>
-    <p>Site criado por ACLtecnol</p>
-  </footer>
+    <footer>
+        <p>Site criado por ACLtecnol</p>
+    </footer>
 
-  <!-- JavaScript -->
-  <script>
-    // SLIDESHOW
-    const imagens = [
-      'imagens/montana1000x350.png',
-      'imagens/imagem bhracing/maverickgustavo1000x350.jpg',
-      'imagens/imagem bhracing/opalavermelho1000x350.jpg',
-      'imagens/imagem bhracing/mostrana1000x350.jpg',
-      'imagens/imagem bhracing/milico1000x350.jpg',
-    ];
-    let indexAtual = 0;
-    const imgPrincipal = document.getElementById('imagem-principal');
+    <script>
+        // SLIDESHOW (MANTIDO)
+        const imagens = [
+            'imagens/montana1000x350.png',
+            'imagens/imagem bhracing/maverickgustavo1000x350.jpg',
+            'imagens/imagem bhracing/opalavermelho1000x350.jpg',
+            'imagens/imagem bhracing/mostrana1000x350.jpg',
+            'imagens/imagem bhracing/milico1000x350.jpg',
+        ];
+        let indexAtual = 0;
+        const imgPrincipal = document.getElementById('imagem-principal');
 
-    setInterval(() => {
-      indexAtual = (indexAtual + 1) % imagens.length;
-      imgPrincipal.src = imagens[indexAtual];
-    }, 3000); // Troca a cada 3 segundos
+        setInterval(() => {
+            indexAtual = (indexAtual + 1) % imagens.length;
+            imgPrincipal.src = imagens[indexAtual];
+        }, 3000);
 
-    // PARALLAX ZOOM RODAPÉ
-    window.addEventListener('scroll', function () {
-      const imgParallax = document.querySelector('.parallax-img');
-      const scrollY = window.scrollY;
-      const scale = 1 + Math.min(scrollY / 1000, 0.5); // Máx 1.5x
-      imgParallax.style.transform = `scale(${scale})`;
-    });
-  </script>
+        // PARALLAX ZOOM RODAPÉ (MANTIDO)
+        window.addEventListener('scroll', function () {
+            const imgParallax = document.querySelector('.parallax-img');
+            const scrollY = window.scrollY;
+            const scale = 1 + Math.min(scrollY / 1000, 0.5); 
+            imgParallax.style.transform = `scale(${scale})`;
+        });
+
+        // MENU SANDUÍCHE (MANTIDO)
+        const toggleBtn = document.getElementById('menu-toggle');
+        const menuLinks = document.getElementById('menu-links');
+
+        if (toggleBtn && menuLinks) {
+            toggleBtn.addEventListener('click', () => {
+                menuLinks.classList.toggle('ativo');
+            });
+        }
+    </script>
 </body>
 </html>
