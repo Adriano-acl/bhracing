@@ -15,23 +15,19 @@ body {
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    /* Definição da cor da fonte para Branco no body */
     color: #fff; 
 }
 
 /* ======================================= */
-/* ===== NOVO FILTRO DE FUNDO (COBRE TUDO) ===== */
+/* ===== FILTRO DE FUNDO (COBRE TUDO) ===== */
 /* ======================================= */
 #filtro-fundo {
-    /* Faz com que a div cubra 100% da largura e altura da viewport */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    /* Define o fundo preto com 50% de transparência (aumento da transparência solicitado) */
     background-color: rgba(0, 0, 0, 0.50); 
-    /* Coloca o filtro atrás de todo o conteúdo (header, nav, main, etc.) */
     z-index: -1; 
 }
 /* ======================================= */
@@ -61,6 +57,67 @@ header p {
     margin: 5px 0;
 }
 
+/* ------------------------------------------- */
+/* NOVO: ESTILOS DOS ÍCONES NO CABEÇALHO (MOBILE) */
+/* ------------------------------------------- */
+
+/* Estilo para links de telefone e endereço (p#t0 e p#t2) */
+header p a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Garante que o ícone fique na mesma linha */
+    display: inline-block; 
+}
+header p a:hover {
+    color: red;
+}
+
+/* Ícone WhatsApp (p#t0) - Alinhado à esquerda do número */
+header p#t0 a i {
+    font-size: 1.1em;
+    margin-right: 5px;
+}
+
+/* Ícone de Localização (p#t2) - Alinhado à esquerda do endereço */
+header p#t2 a i {
+    font-size: 1.1em;
+    margin-right: 5px;
+}
+
+/* Ícones de Mídias Sociais (Contêiner) */
+.social-icons-header {
+    text-align: center;
+    padding: 10px 0 5px; /* Espaço entre o endereço e os ícones */
+}
+
+/* Links dos Ícones Sociais */
+.social-icons-header a {
+    color: white;
+    font-size: 1.5em; /* Tamanho dos ícones */
+    margin: 0 8px; /* Espaçamento horizontal */
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons-header a:hover {
+    transform: scale(1.1);
+}
+
+/* Cores de Hover Específicas */
+.social-icons-header .fa-instagram:hover {
+    color: #E1306C;
+}
+.social-icons-header .fa-facebook-f:hover {
+    color: #4267B2;
+}
+.social-icons-header .fa-youtube:hover {
+    color: #FF0000;
+}
+/* ------------------------------------------- */
+
+
 /* ======================================= */
 /* ===== MENU SANDUÍCHE (FINAL) ===== */
 /* ======================================= */
@@ -71,8 +128,6 @@ header p {
     text-align: left;
     min-height: 48px; 
 }
-
-/* BOTÃO SANDUÍCHE */
 .menu-toggle {
     display: block; 
     background: none;
@@ -86,8 +141,6 @@ header p {
     transform: translateY(-50%);
     z-index: 11; 
 }
-
-/* LINKS DO MENU */
 .menu-links {
     list-style-type: none;
     padding: 0;
@@ -102,15 +155,12 @@ header p {
     z-index: 10;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-
 .menu-links.ativo {
     display: flex; 
 }
-
 .menu-links li {
     width: 100%; 
 }
-
 .menu-links a {
     display: block;
     color: white;
@@ -119,7 +169,6 @@ header p {
     font-weight: bold;
     background-image: linear-gradient(to left, rgba(255, 0, 0, 0.408), transparent);
 }
-
 .menu-links a:hover {
     background-color: red;
     color: rgb(230, 230, 230);
@@ -128,7 +177,6 @@ header p {
 
 /* ===== CONTEÚDO E SLIDESHOW (PADRÃO) ===== */
 main {
-    /* Padding e centralização retornam ao main, que não tem mais fundo escuro */
     padding: 10px;
     max-width: 1200px;
     margin: 0 auto;
@@ -198,9 +246,8 @@ main {
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* Fundo dos quadros deve ser claro para o texto preto */
     background: rgba(255, 255, 255, 0.9);
-    color: #000; /* Texto Preto no Quadro Branco */
+    color: #000;
     padding: 10px 15px;
     box-sizing: border-box;
     text-align: left;
@@ -246,13 +293,18 @@ footer {
     transition: transform 0.3s ease-out;
 }
 
-/* ===== MEDIA QUERY PARA AJUSTE DO CABEÇALHO (PADRÃO) ===== */
+/* ===== MEDIA QUERY PARA AJUSTE DO CABEÇALHO (TABLET/DESKTOP) ===== */
 @media (min-width: 769px) {
+    
     header p#t0,
     header p#t2 {
+        /* Regras originais */
         display: inline-block;
         width: 48%;
         font-size: 1em;
+        margin: 0; 
+        padding: 5px 0; 
+        white-space: nowrap; /* Impede a quebra de linha do texto */
     }
 
     header p#t0 {
@@ -262,26 +314,30 @@ footer {
     header p#t2 {
         text-align: right;
     }
+    
+    /* Centraliza os ícones sociais abaixo do telefone/endereço */
+    .social-icons-header {
+        text-align: center;
+        padding: 5px 0 0; 
+        margin-top: 10px;
+    }
 }
 /* ======================================= */
 /* ===== GALERIA DE FOTOS (FOTO_BHRACING.HTML) ===== */
 /* ======================================= */
 
 .galeria-fotos {
-    /* Define o layout de grade flexível para a galeria */
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px; /* Espaço entre as fotos */
+    gap: 15px;
     padding: 20px 0;
 }
 
 .galeria-fotos img {
-    /* Define o tamanho das fotos. 
-       A largura 225px é usada nas imagens originais, então ajustaremos o CSS. */
     width: 225px; 
-    height: 225px; /* Mantém a proporção quadrada */
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    height: 225px;
+    object-fit: cover;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
     transition: transform 0.3s ease;
@@ -289,14 +345,12 @@ footer {
 }
 
 .galeria-fotos img:hover {
-    /* Efeito de destaque ao passar o mouse */
     transform: scale(1.05);
 }
 
 /* Ajuste para telas menores (responsividade) */
 @media (max-width: 500px) {
     .galeria-fotos img {
-        /* Torna as imagens maiores em telas muito pequenas (ex: celulares) */
         width: 100%; 
         height: auto;
         max-width: 300px;
