@@ -58,7 +58,7 @@ header p {
 }
 
 /* ------------------------------------------- */
-/* NOVO: ESTILOS DOS ÍCONES NO CABEÇALHO (MOBILE) */
+/* ESTILOS DOS ÍCONES NO CABEÇALHO */
 /* ------------------------------------------- */
 
 /* Estilo para links de telefone e endereço (p#t0 e p#t2) */
@@ -66,11 +66,10 @@ header p a {
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
-    /* Garante que o ícone fique na mesma linha */
     display: inline-block; 
 }
 header p a:hover {
-    color: red;
+    color: #ff9900; /* Destaque com cor da marca */
 }
 
 /* Ícone WhatsApp (p#t0) - Alinhado à esquerda do número */
@@ -88,14 +87,14 @@ header p#t2 a i {
 /* Ícones de Mídias Sociais (Contêiner) */
 .social-icons-header {
     text-align: center;
-    padding: 10px 0 5px; /* Espaço entre o endereço e os ícones */
+    padding: 10px 0 5px;
 }
 
 /* Links dos Ícones Sociais */
 .social-icons-header a {
     color: white;
-    font-size: 1.5em; /* Tamanho dos ícones */
-    margin: 0 8px; /* Espaçamento horizontal */
+    font-size: 1.5em;
+    margin: 0 8px;
     text-decoration: none;
     transition: transform 0.3s ease;
     display: inline-block;
@@ -119,7 +118,7 @@ header p#t2 a i {
 
 
 /* ======================================= */
-/* ===== MENU SANDUÍCHE (FINAL) ===== */
+/* ===== MENU SANDUÍCHE ===== */
 /* ======================================= */
 .navbar {
     background-color: rgba(14, 14, 14, 0.85);
@@ -167,15 +166,15 @@ header p#t2 a i {
     padding: 10px 15px;
     text-decoration: none;
     font-weight: bold;
-    background-image: linear-gradient(to left, rgba(255, 0, 0, 0.408), transparent);
+    background-image: linear-gradient(to left, rgba(255, 153, 0, 0.408), transparent); /* Usando a cor de destaque */
 }
 .menu-links a:hover {
-    background-color: red;
-    color: rgb(230, 230, 230);
+    background-color: #ff9900; /* Cor de destaque no hover */
+    color: #1a1a1a;
 }
 /* ======================================= */
 
-/* ===== CONTEÚDO E SLIDESHOW (PADRÃO) ===== */
+/* ===== CONTEÚDO E SLIDESHOW ===== */
 main {
     padding: 10px;
     max-width: 1200px;
@@ -198,7 +197,7 @@ main {
     object-fit: cover;
 }
 
-/* ===== QUADROS DE SEÇÕES (PADRÃO) ===== */
+/* ===== QUADROS DE SEÇÕES ===== */
 .quadros-container {
     display: flex;
     justify-content: center;
@@ -228,7 +227,7 @@ main {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
 }
 
-/* ====== IMAGENS DOS QUADROS (PADRÃO) ====== */
+/* ====== IMAGENS DOS QUADROS ====== */
 #q1 {
     background-image: url('imagens/sergio bh racing225x225.jpeg');
 }
@@ -241,7 +240,7 @@ main {
     background-image: url('imagens/serigo bh racing2.jpeg');
 }
 
-/* ====== DESCRIÇÃO SOBREPOSTA (PADRÃO) ====== */
+/* ====== DESCRIÇÃO SOBREPOSTA ====== */
 .descricao {
     position: absolute;
     bottom: 0;
@@ -265,15 +264,131 @@ main {
     line-height: 1.2;
 }
 
-/* ====== RODAPÉ E PARALLAX (FINAL) ===== */
-footer {
-    text-align: center;
-    padding: 10px;
+
+/* ======================================= */
+/* ====== NOVO RODAPÉ (FOOTER) - ESTILOS PROFISSIONAIS ====== */
+/* ======================================= */
+.footer {
+    background-color: #1a1a1a; /* Fundo escuro */
+    color: #fff; /* Texto claro */
+    padding: 40px 20px 20px;
     font-size: 0.9em;
-    background-image: linear-gradient(to bottom, black, rgb(71, 71, 71));
-    color: white;
 }
 
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.footer-col {
+    width: 22%; /* Define a largura para 4 colunas */
+    min-width: 250px; /* Garante que não fique muito estreito em telas pequenas */
+    margin-bottom: 30px;
+}
+
+.footer-col h4 {
+    color: #ff9900; /* Cor de destaque (laranja) */
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-bottom: 2px solid #ff9900;
+    padding-bottom: 5px;
+}
+
+/* Estilo dos Links */
+.footer-col a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+.footer-col a:hover {
+    color: #ff9900;
+}
+
+.footer-col i {
+    margin-right: 8px;
+}
+
+.footer-col p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+/* --- ESTILO DO FORMULÁRIO --- */
+.contact-form-container {
+    /* Sem regras específicas aqui */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    background-color: #2b2b2b;
+    color: #fff;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #aaa;
+}
+
+.contact-form button {
+    background-color: #ff9900;
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.contact-form button:hover {
+    background-color: #e68a00;
+}
+
+/* --- Ícones Sociais do Rodapé --- */
+.footer-social-icons {
+    margin-top: 15px;
+}
+
+.footer-social-icons a {
+    font-size: 1.5em;
+    margin-right: 15px;
+    color: #ccc;
+}
+
+/* --- Rodapé Inferior (Copyright) --- */
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #aaa;
+}
+
+/* ====== RODAPÉ PARALLAX ANTIGO (Pode ser mantido ou removido se quiser) ===== */
 .rodape-parallax {
     position: relative;
     overflow: hidden;
@@ -292,19 +407,22 @@ footer {
     object-position: center;
     transition: transform 0.3s ease-out;
 }
+/* ======================================= */
 
-/* ===== MEDIA QUERY PARA AJUSTE DO CABEÇALHO (TABLET/DESKTOP) ===== */
+
+/* ===== MEDIA QUERIES (Responsividade) ===== */
+
+/* Ajuste para Tablet/Desktop no Cabeçalho */
 @media (min-width: 769px) {
     
     header p#t0,
     header p#t2 {
-        /* Regras originais */
         display: inline-block;
         width: 48%;
         font-size: 1em;
         margin: 0; 
         padding: 5px 0; 
-        white-space: nowrap; /* Impede a quebra de linha do texto */
+        white-space: nowrap;
     }
 
     header p#t0 {
@@ -315,17 +433,26 @@ footer {
         text-align: right;
     }
     
-    /* Centraliza os ícones sociais abaixo do telefone/endereço */
     .social-icons-header {
         text-align: center;
         padding: 5px 0 0; 
         margin-top: 10px;
     }
-}
-/* ======================================= */
-/* ===== GALERIA DE FOTOS (FOTO_BHRACING.HTML) ===== */
-/* ======================================= */
 
+    /* Responsividade do Rodapé - 2 colunas em telas médias */
+    .footer-col {
+        width: 45%; 
+    }
+}
+
+/* Responsividade do Rodapé - 1 coluna em celulares */
+@media (max-width: 580px) {
+    .footer-col {
+        width: 100%; 
+    }
+}
+
+/* Estilos de Galeria (para foto_bhracing.html) */
 .galeria-fotos {
     display: flex;
     flex-wrap: wrap;

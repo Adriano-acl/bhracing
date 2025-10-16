@@ -74,20 +74,69 @@
         <img src="imagens/chatgbtbhracing.png" alt="Imagem Rodapé" class="parallax-img">
     </section>
 
-    <footer>
-        <p>Site criado por ACLtecnol</p>
+    <footer class="footer">
+        <div class="footer-container">
+            
+            <div class="footer-col contact-info">
+                <h4>BH RACING</h4>
+                <p>Sua oficina especializada em alta performance.</p>
+                <p>
+                    <a href="https://www.google.com/maps/place/R.+Bartolomeu+Bueno+de+Gusmão,+119+-+Aeronautas,+Lagoa+Santa+-+MG,+33236-454/@-19.6693331,-43.8963938,17z/data=!3m1!4b1!4m6!3m5!1s0xa67db060aa87bd:0xe6a30abfcf465156!8m2!3d-19.6693331!4d-43.8938189!16s%2Fg%2F11f1223j9m?entry=ttu&g_ep=EgoyMDI1MTAxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank" aria-label="Google Maps"><i class="fas fa-map-marker-alt"></i></a>
+                    <a href="https://www.waze.com/pt-BR/live-map/directions/br/mg/r.-bartolomeu-bueno-de-gusmao,-119?to=place.ChIJvYeqYLB9pgARVlFGz78Ko-Y" target="_blank" aria-label="Waze" style="margin-right: 10px;"><i class="fab fa-waze"></i></a>
+                    Rua Bartolomeu B. de Gusmão 119, Lagoa Santa/MG
+                </p>
+                <p><a href="https://api.whatsapp.com/send?phone=5531995587981" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i> (31) 99558-7981</a></p>
+                <p><i class="fas fa-envelope"></i> contato@bhracing.com.br</p>
+            </div>
+
+            <div class="footer-col quick-links">
+                <h4>Links Rápidos</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pagbhracing.html">Quem Somos</a></li>
+                    <li><a href="foto_bhracing.html">Galeria de Carros</a></li>
+                    <li><a href="#">Serviços</a></li> </ul>
+            </div>
+
+            <div class="footer-col contact-form-container">
+                <h4>Fale Conosco</h4>
+                <form action="processa_contato.php" method="POST" class="contact-form">
+                    <input type="text" name="nome" placeholder="Seu Nome" required>
+                    <input type="email" name="email" placeholder="Seu Email" required>
+                    <textarea name="mensagem" rows="3" placeholder="Sua Mensagem" required></textarea>
+                    <button type="submit">Enviar Mensagem</button>
+                </form>
+            </div>
+
+            <div class="footer-col social-hours">
+                <h4>Horário de Funcionamento</h4>
+                <p>Segunda a Sexta: 08:00 - 18:00</p>
+                <p>Sábado: 08:00 - 12:00</p>
+                <div class="footer-social-icons">
+                    <a href="https://www.instagram.com/bhracing_since2001/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1DfX3KGgid/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="LINK_YOUTUBE" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 BH Racing. Todos os direitos reservados. Site criado por ACLtecnol</p>
+        </div>
     </footer>
 
     <script>
-        // PARALLAX ZOOM RODAPÉ (MANTIDO)
+        // PARALLAX ZOOM RODAPÉ
         window.addEventListener('scroll', function () {
             const imgParallax = document.querySelector('.parallax-img');
             const scrollY = window.scrollY;
-            const scale = 1 + Math.min(scrollY / 1000, 0.5); 
-            imgParallax.style.transform = `scale(${scale})`;
+            const scale = 1 + Math.min(scrollY / 1000, 0.5);
+            if (imgParallax) {
+                imgParallax.style.transform = `scale(${scale})`;
+            }
         });
         
-        // MENU SANDUÍCHE (MANTIDO)
+        // MENU SANDUÍCHE
         const toggleBtn = document.getElementById('menu-toggle');
         const menuLinks = document.getElementById('menu-links');
         
