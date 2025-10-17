@@ -69,9 +69,17 @@ header p a {
     display: inline-block; 
 }
 header p a:hover {
-    color: #ff9900; /* Destaque com cor da marca */
+    color: white; /* icones do cabeçalho*/
 }
-
+header p a:hover .fa-whatsapp {
+    color: #25D366; /* Verde do WhatsApp */
+}
+header p a:hover .fa-map-marker-alt {
+    color: #ea4335; /* Vermelho do Google Maps */
+}
+header p a:hover .fa-waze {
+    color: #49b3c5; /* Azul esverdeado do Waze */
+}
 /* Ícone WhatsApp (p#t0) - Alinhado à esquerda do número */
 header p#t0 a i {
     font-size: 1.1em;
@@ -166,10 +174,10 @@ header p#t2 a i {
     padding: 10px 15px;
     text-decoration: none;
     font-weight: bold;
-    background-image: linear-gradient(to left, rgba(255, 153, 0, 0.408), transparent); /* Usando a cor de destaque */
+    background-image: linear-gradient(to left, rgba(255, 30, 0, 0.408), transparent); /* Usando a cor de destaque */
 }
 .menu-links a:hover {
-    background-color: #ff9900; /* Cor de destaque no hover */
+    background-color: #ff4000fc; /* Cor de destaque no hover */
     color: #1a1a1a;
 }
 /* ======================================= */
