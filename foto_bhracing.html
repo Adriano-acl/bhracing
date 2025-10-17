@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BH Racing - História</title>
+    <title>BH Racing - Carros</title>
     <link rel="shortcut icon" href="imagens/favicon bh racing lo completo/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
@@ -54,22 +54,27 @@
     </nav>
     
     <main>
-        <h1>Historia BH Racing</h1>
-        <P>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia vitae cumque veniam, illo ab natus ducimus quod consequatur doloremque corporis ea accusamus odit cupiditate facilis, assumenda harum aperiam voluptatum fuga. Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus modi atque earum est accusamus nostrum, quam officiis fugit natus necessitatibus. Officia impedit mollitia accusamus consectetur minus fugit unde modi eos.</P>
-        <picture>
-            <img src="imagens/bhracingtransparente.png" alt="imagem bh racing">
-        </picture>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta sit necessitatibus illum eaque, aut cum? Itaque hic, eligendi error optio ducimus necessitatibus? Consequatur iusto iste ab? Nobis, unde. Soluta, odio. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aperiam architecto similique. Veritatis, ratione illum perferendis voluptates voluptatem voluptatum, adipisci aut nam quidem ipsum dolores repellat placeat sequi accusantium. Fugit.</p>
-        <picture>
-            <img src="imagens/montanafogo.jpeg" alt="img montana">
-            <img src="imagens/montanafogo.jpeg" alt="montana fogo">
-        </picture>
-        <picture>
-            <img src="imagens/montanafogo.jpeg" alt="">
-        </picture>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores incidunt maiores fugiat distinctio perferendis, est facere illum a at ab reiciendis debitis impedit. Quas recusandae quia non veniam voluptatibus atque. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius doloribus vero tenetur placeat enim vitae iusto nostrum beatae consequatur! Accusantium quos ipsum, incidunt unde nisi nam facere cumque ab eius.</p>
+        <h1>FOTOS DOS CARROS E MOMENTOS</h1>
+
+        <div class="galeria-fotos">
+            <img src="imagens/imagem bhracing/maverik_motor_225.jpg" alt="Maverick Motor">
+            <img src="imagens/imagem bhracing/maverik1_225.jpg" alt="Maverick na Pista">
+            <img src="imagens/imagem bhracing/chevette1_225.jpg" alt="Chevette">
+            <img src="imagens/imagem bhracing/montana_alinhando_225.jpg" alt="Montana Alinhando">
+            <img src="imagens/imagem bhracing/milico1_225.jpg" alt="Carro Milico">
+            <img src="imagens/imagem bhracing/beringela_225.jpg" alt="Carro Beringela">
+            <img src="imagens/imagem bhracing/audi_225.jpg" alt="Audi de Corrida">
+            <img src="imagens/imagem bhracing/chevette1_225.jpg" alt="Chevette 2">
+            <img src="imagens/imagem bhracing/thiago_visita_225.jpg" alt="Visita Thiago">
+            <img src="imagens/imagem bhracing/civic_225.jpg" alt="Honda Civic">
+            <img src="imagens/imagem bhracing/montana_frente_225.jpg" alt="Montana Frente">
+            <img src="imagens/imagem bhracing/milico_sergio_225.jpg" alt="Milico e Sergio">
+            <img src="imagens/imagem bhracing/montanab_225.jpg" alt="Montana B">
+            <img src="imagens/imagem bhracing/cristian_225.jpg" alt="Cristian">
+            <img src="imagens/imagem bhracing/milico_grade_225.jpg" alt="Milico Grade">
+        </div>
     </main>
-    
+
     <section class="rodape-parallax">
         <img src="imagens/chatgbtbhracing.png" alt="Imagem Rodapé" class="parallax-img">
     </section>
@@ -131,7 +136,7 @@
             const imgParallax = document.querySelector('.parallax-img');
             const scrollY = window.scrollY;
             const scale = 1 + Math.min(scrollY / 1000, 0.5);
-            if (imgParallax) {
+            if (imgParallax) { 
                 imgParallax.style.transform = `scale(${scale})`;
             }
         });
